@@ -1,0 +1,261 @@
+{% extends 'frontend_base.html' %}
+{% block title %}
+<title>DI | Cart </title>
+{% endblock %}
+{% load static %}   
+{% block body%}
+	<div class="row g-0" style="background-color:#007bff ;">
+
+		<div class="col-lg-12" style="color: white;">
+
+			<div class="box-element" style="box-shadow:hsl(0, 0%, 0%)0 0 16px;
+                 background-color:#000; border-radius:4px; padding :10px;">
+
+				<br>
+				<table class="table" style="color: white;">
+					<tr>
+						<th><h2>Quantity: {{TotalCartItems}}</h2></th>
+						<th><h2>Total:${{TotalCartAmount}}</h2></th>
+
+					</tr>
+				</table>
+				<div>
+					<a class="btn btn-primary"  style="float: right;" id="change-color" href="{% url 'Checkout' %}">checkout &rarr;</a>
+				</div>
+				<br>
+				<br>
+			</div>
+
+			<br class="gx-0">
+
+			<div class="box-element" style="box-shadow:hsl(0, 0%, 1%) 0 0 30px;
+                 background-color:#111111; border-radius:4px; padding :6px;">
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong><h4>Products</h4></strong></div>
+					<div style="flex:1"><strong><h4>Price</h4></strong></div>
+
+					<div style="flex:1"><strong><h4>Remove</h4></strong></div>
+				</div>
+
+				{% for item in renderaudiospectrums %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger spectrum-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderlyricstemplates %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger lyricstemplate-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderaudiopack %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger AudioPack-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in rendervfxpack %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger VfxPack-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderflimtransitionpack %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger FlimTransitionPack-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+
+				{% for item in rendermotiongraphicspack %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger MotionGraphicsPack-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+
+				{% for item in renderlightiningsfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger  electricitysfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderenvironmentalsfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger EnvironmentalSfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderweaponsfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger WeaponSfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderfiresfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger firesfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderenergysfx%}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger  EnergySfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderfightiningsfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}"  data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger FightingSfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in rendermachinerysfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger MachinerySfx-cart ">Remove</button></div>
+				</div>
+				{% endfor %}
+
+				{% for item in renderlightiningvfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"   data-action="remove" class="chg-quantity btn btn-sm btn-danger electricityvfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}	
+				
+				{% for item in renderenergyvfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>  
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"   data-action="remove" class="chg-quantity btn btn-sm btn-danger EnergyVfx-cart ">Remove</button></div>
+				</div>
+				{% endfor %}	
+
+				{% for item in rendermuzzleflashesvfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger Muzzleflashes-cart">Remove</button></div>
+				</div>
+				{% endfor %}	
+				
+				{% for item in rendershockwavesvfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>  
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger Shockwaves-cart ">Remove</button></div>
+				</div>
+				{% endfor %}	
+				
+
+				{% for item in renderparticlevfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger Particlesvfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}	
+				
+				{% for item in renderenvironmentalvfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>  
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger EnvironmentVfx-cart ">Remove</button></div>
+				</div>
+				{% endfor %}	
+
+				{% for item in renderdebrisandcrackvfx %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}"  data-action="remove" class="chg-quantity btn btn-sm btn-danger DebrisAndCrackvfx-cart">Remove</button></div>
+				</div>
+				{% endfor %}	
+				
+
+
+				{% for item in renderlandscapes %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>  
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger Landscape-cart ">Remove</button></div>
+				</div>
+				{% endfor %}		
+				
+				{% for item in rendercharacters %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>  
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger Character-cart ">Remove</button></div>
+				</div>
+				{% endfor %}	
+
+				{% for item in renderopticallens %}   
+				<div class="cart-row" style="display:flex; align-items:flex-stretch; margin-bottom:10px; padding-bottom:20px ;border-bottom: 1px solid black ;" >
+					<div style="flex:2"><strong>{{ item.product}}</strong></div>
+					<div style="flex:1"><strong> ${{ item.product.price|floatformat:2}}</strong></div>  
+					
+					<div style="flex:1"><span><button type="button" data-product="{{item.product}}" data-pubid="{{item.published_by}}" data-action="remove" class="chg-quantity btn btn-sm btn-danger Opticallens-cart ">Remove</button></div>
+				</div>
+				{% endfor %}	
+
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+			<br>
+			
+		</div>
+	</div>
+{% endblock body%}

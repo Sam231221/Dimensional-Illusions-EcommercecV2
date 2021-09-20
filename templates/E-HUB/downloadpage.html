@@ -1,0 +1,581 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>DI |DownloadPage </title>
+{% endblock %}
+{% load static %}
+{% block body %}
+
+<div style="background-color: #000000; padding: 2rem;">
+  <h2 class="text-center mb-0" style="background-color: #000000;">Welcome to DownloadPage</h2>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-lg-12" style="color: white;">
+    <div class="box-element" style="box-shadow:hsl(0, 0%, 0%)0 0 16px;
+                 background-color:#000; padding :1rem;">
+      <a class="btn rounded-3 btn-primary" href="{% url 'home' %}">&#x2190;
+        Go To Home</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="jumbotron" style="background-color: black; margin: 0px;">
+  <div class="album py-5 font-control">
+    <div class="container">
+
+      <div class="row" style="background-color: black;">
+
+        {% for i in purchasedlandscapes %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 font-control">
+
+          <div class="card mb-4 shadow-sm " style="background-color: #111111;">
+            <img src="{{i.product.freeproduct.url}}" alt="" srcset="" width="100%" height="150">
+
+            <div class="card-body">
+
+              <div class="card-body">
+                <p class="card-text text-center"><strong>{{i.product.name}}</strong></p>
+                <div class=" text-center align-items-center">
+                  <div class="btn-group ">
+                    <a href="{{i.product.freeproduct.url}}" download="">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedcharacters %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 font-control">
+
+          <div class="card mb-4 shadow-sm " style="background-color: #111111;">
+            <img src="{{i.product.freeproduct.url}}" alt="" srcset="" width="100%" height="150">
+
+            <div class="card-body">
+
+              <div class="card-body">
+                <p class="card-text text-center"><strong>{{i.product.name}}</strong></p>
+                <div class=" text-center align-items-center">
+                  <div class="btn-group ">
+                    <a href="{{i.product.freeproduct.url}}" download="">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedopticallens %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3 font-control">
+
+          <div class="card mb-4 shadow-sm " style="background-color: #111111;">
+            <img src="{{i.product.freeproduct.url}}" alt="" srcset="" width="100%" height="150">
+
+            <div class="card-body">
+
+              <div class="card-body">
+                <p class="card-text text-center"><strong>{{i.product.name}}</strong></p>
+                <div class=" text-center align-items-center">
+                  <div class="btn-group ">
+                    <a href="{{i.product.freeproduct.url}}" download="">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" style="background-color: black; margin: 0px;">
+  <div class="album py-5 font-control">
+    <div class="container">
+
+      <div class="row" style="background-color: black;">
+
+        {% for i in purchasedaudiospectrums %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+            <video loop width="100%" height="150">
+              <source src="{{i.product.video.url}}">
+            </video>
+            <div class="card-body">
+              <p class="card-text">{{i.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.file.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedlyricstemplates %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+            <video loop width="100%" height="150">
+              <source src="{{i.product.video.url}}">
+            </video>
+            <div class="card-body">
+              <p class="card-text">{{i.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.file.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" style="background-color: black; margin: 0px;">
+  <div class="album py-5 font-control">
+    <div class="container">
+
+      <div class="row" style="background-color: black;">
+
+        {% for i in purchasedaudiopacks%}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+            <video loop width="100%" height="150">
+              <source src="{{i.product.video.url}}">
+            </video>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.file.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedvfxpack %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+            <video loop width="100%" height="150">
+              <source src="{{i.product.video.url}}">
+            </video>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.file.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedflimtransitionpack %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+            <video loop width="100%" height="150">
+              <source src="{{i.product.video.url}}">
+            </video>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.file.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedmotiongraphicspack %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+            <video loop width="100%" height="150">
+              <source src="{{i.product.video.url}}">
+            </video>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.file.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" style="background-color: black; margin: 0px;">
+  <div class="album py-5 font-control">
+    <div class="container">
+
+      <div class="row" style="background-color: black;">
+
+
+        {% for i in purchasedlightiningsfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedenvironmentalsfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedweaponsfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedfiresfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+        {% for i in purchasedenergysfx%}
+
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+        {% for i in purchasedfightiningsfx %}
+
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {% endfor %}
+
+        {% for i in purchasedmachinerysfx %}
+
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm" style="background-color: #111111;">
+            <audio style="height: 1.4rem;" controls>
+              <source src="{{i.product.freeproduct.url}}">
+            </audio>
+
+            <div class="card-body">
+              <p class="card-text">{{i.product.name}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" style="background-color: black; margin: 0px;">
+  <div class="album py-5 font-control">
+    <div class="container">
+
+      <div class="row" style="background-color: black;">
+
+        {% for i in purchasedlightiningvfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedenergyvfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedmuzzleflashesvfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedshockwavesvfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedparticlevfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchasedenvironmentalvfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for i in purchaseddebrisandcrackvfx %}
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="card mb-4 shadow-sm videocontroller" style="background-color: #111111;">
+
+            <video loop width="100%" height="150">
+              <source src="{{i.product.freeproduct.url}}">
+            </video>
+
+            <div class="card-body">
+              <p class="card-text"><strong>{{i.product.name}}</strong></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{i.product.freeproduct.url}}" download="">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
