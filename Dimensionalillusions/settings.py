@@ -26,7 +26,7 @@ SECRET_KEY=')osa2y(^uk4sdghs+#(14if-)b1&6_uo@(h#0c%sci^a#!(k@z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dimensionalillusions.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['dimensionalilliusionversion1.herokuapp.com','127.0.0.1']
 
 
 # Application definition
